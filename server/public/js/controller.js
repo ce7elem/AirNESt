@@ -1,5 +1,5 @@
 
-const host = 'SERVICEPUBLIC-terruspro961647.codeanyapp.com'
+const host = '' //host ip
 
 let ws = new WebSocket('ws://' + host + ':8888');
 
