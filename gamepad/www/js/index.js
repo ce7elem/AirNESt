@@ -1,5 +1,5 @@
 (function(){
-  const host = 'SERVICEPUBLIC-terruspro961647.codeanyapp.com'
+  const host = '' //HOST IP
 
   // document.addEventListener('deviceready', () => {
   let ws = new WebSocket('ws://' + host + ':8888');
