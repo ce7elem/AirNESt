@@ -1,0 +1,173 @@
+
+body{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  font-family: 'Press Start 2P', monospace;
+  margin-top: 0;
+}
+
+div#header{
+  text-align: center;
+  margin : auto;
+  color: yellow;
+
+  display: flex;
+}
+
+#header #center{
+  flex: 2;
+}
+#header #hleft{
+  flex: 1;
+  color : rgb(47, 54, 136)
+}
+#header #hright{
+  flex: 1;
+  color: rgb(185, 35, 35)
+}
+
+#center p{
+  opacity: 0.7;
+}
+
+img{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+button{
+  position: absolute;
+  opacity: 0;
+}
+button:active{
+  opacity: 0.30;
+  background-color: grey;
+}
+
+#A{
+  bottom: 6vw;
+  right: 10vw;
+  width: 13vw;
+  height: 12vw;
+}
+
+#B{
+  bottom: 6vw;
+  right: 22vw;
+  width: 13vw;
+  height: 12vw;
+}
+
+#start{
+  bottom: 7vw;
+  right: 40vw;
+  width: 12vw;
+  height: 10vw;
+}
+
+#select{
+  bottom: 7vw;
+  right: 52vw;
+  width: 12vw;
+  height: 10vw;
+}
+
+#up{
+  bottom: 17vw;
+  left: 12vw;
+  width: 8vw;
+  height: 14vw;
+}
+
+#down{
+  bottom: 3vw;
+  left: 12vw;
+  width: 8vw;
+  height: 14vw;
+}
+
+#left{
+  bottom: 12vw;
+  left: 0;
+  width: 12vw;
+  height: 10vw;
+}
+
+#right{
+  bottom: 12vw;
+  left: 20vw;
+  width: 12vw;
+  height: 10vw;
+}
+
+
+.connection {
+  position: relative;
+
+  display: block;
+  margin: 30px auto;
+  padding: 0;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+  background-color: #616161;
+  color: #ecf0f1;
+
+  transition: background-color .3s;
+}
+
+.connection:hover, .connection:focus {
+  background-color: #6c6c6c;
+}
+
+.connection > * {
+  position: relative;
+}
+
+.connection span {
+  display: block;
+  padding: 12px 24px;
+}
+
+.connection:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, .3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.connection:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}
