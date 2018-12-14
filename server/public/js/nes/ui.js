@@ -92,7 +92,7 @@ if (typeof jQuery !== 'undefined') {
           }
         });
 
-        self.zoomed = false;
+        self.zoomed = true;
         self.buttons.zoom.click(function() {
           if (self.zoomed) {
             self.screen.animate({
@@ -181,6 +181,7 @@ if (typeof jQuery !== 'undefined') {
             },
             complete: function(xhr, status) {
               var i, data;
+              console.log(Object.getOwnPropertyNames(self.romSelect));
               if (JSNES.Utils.isIE()) {
                 var charCodes = JSNESBinaryToArray(
                   xhr.responseBody

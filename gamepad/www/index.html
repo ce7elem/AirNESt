@@ -11,6 +11,8 @@
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
+  <script type='application/javascript' src='js/fastclick.min.js'></script>
+
   <title>SP-Gamepad</title>
 </head>
 
@@ -44,6 +46,14 @@
 
   <!-- <script type="text/javascript" src="cordova.js"></script> -->
   <script type="text/javascript" src="js/index.js"></script>
+
+  <script type="text/javascript">
+    if ('addEventListener' in document) {
+      document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+      }, false);
+    }
+  </script>
 </body>
 
 </html>

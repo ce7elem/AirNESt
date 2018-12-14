@@ -1,5 +1,5 @@
 
-const host = '' //host ip
+const host = '1278.0.0.1' //host ip
 
 let ws = new WebSocket('ws://' + host + ':8888');
 
@@ -11,21 +11,31 @@ const controllerInput = {
 
 function initController(run) {
   ws.onmessage = function(event) {
-    let input = JSON.parse(event.data);
+    let data = JSON.parse(event.data);
 
-    switch (input.type) {
-      case controllerInput.KEY_DOWN:
-        run.nes.keyboard.keyDown(input.key);
-      break;
-      case controllerInput.KEY_UP:
-        run.nes.keyboard.keyUp(input.key);
-      break;
-      case controllerInput.KEY_PRESS:
-        run.nes.keyboard.keyPress(input.key);
-      break;
+    if (data.room == game.room) {
+      handleInput(data.input.type);
     }
+
   };
 }
+
+function handleInput(input){
+
+  switch (input) {
+    case controllerInput.KEY_DOWN:
+      run.nes.keyboard.keyDown(input.key);
+    break;
+    case controllerInput.KEY_UP:
+      run.nes.keyboard.keyUp(input.key);
+    break;
+    case controllerInput.KEY_PRESS:
+      run.nes.keyboard.keyPress(input.key);
+    break;
+  }
+
+}
+
 // $(document).
 //     bind('keydown', function(evt) {
 //         self.nes.keyboard.keyDown(evt);

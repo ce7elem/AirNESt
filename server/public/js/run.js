@@ -8,3 +8,8 @@ $(function() {
     })
   });
 });
+
+var game = {
+  room: 0,
+  name: ""
+}
