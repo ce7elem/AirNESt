@@ -6,7 +6,7 @@ Play the iconic NES console in your browser with an application that imitates th
 Building AirNESt
 ================
 
--Build and run the web server :
+- Build and run the web server :
 ```
   $ # clone project and get dependencies
   $ git clone https://github.com/TERRUSS/AirNESt
@@ -21,7 +21,7 @@ Building AirNESt
   $ ./main
 ```
 
--Build the mobile app :
+- Build the mobile app :
 You will need [cordova](https://cordova.apache.org).
 ```
   $ cordova build android
