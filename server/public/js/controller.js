@@ -1,8 +1,4 @@
 
-const host = '1278.0.0.1' //host ip
-
-let ws = new WebSocket('ws://' + host + ':8888');
-
 const controllerInput = {
   KEY_DOWN: 1,
   KEY_UP: 2,

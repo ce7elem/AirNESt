@@ -2,9 +2,12 @@ package main
 
 import (
 	"log"
+	"os/exec"
+	"os"
 	"net/http"
 
 	"github.com/gorilla/websocket"
+	"github.com/fatih/color"
 )
 
 var clients = make(map[*websocket.Conn]bool) // connected clients
@@ -21,10 +24,17 @@ var upgrader = websocket.Upgrader{
 type Message struct {
 	Room    string `json:"room"`
 	Id string `json:"id"`
-	// Message  string `json:"message"`
+	Input  string `json:"input"`
 }
 
 func main() {
+
+	output, err := exec.Command("cat", "banner.ascii").CombinedOutput()
+	if err != nil {
+	  os.Stderr.WriteString(err.Error())
+	}
+	color.White(string(output))
+
 	// Create a simple file server
 	fs := http.FileServer(http.Dir("public"))
 	http.Handle("/", fs)
@@ -36,10 +46,10 @@ func main() {
 	go handleMessages()
 
 	// Start the server on localhost port 8000 and log any errors
-	log.Println("http server started on :8080")
-	err := http.ListenAndServe(":8080", nil)
+	color.Magenta("http server started on :8080")
+	err = http.ListenAndServe(":8080", nil)
 	if err != nil {
-		log.Fatal("ListenAndServe: ", err)
+		color.Red("ListenAndServe: ", err)
 	}
 }
 
@@ -54,16 +64,13 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 	}
 	// Make sure we close the connection when the function returns
 	defer ws.Close()
-
-	// Register our new client
-	clients[ws] = true
-
+	color.Green("[new connected]")
 	for {
 		var msg Message
 		// Read in a new message as JSON and map it to a Message object
 		err := ws.ReadJSON(&msg)
 		if err != nil {
-			log.Printf("error: %v", err)
+			color.Yellow("error: %v", err)
 			delete(clients, ws)
 			break
 		}
@@ -80,7 +87,7 @@ func handleMessages() {
 		for client := range clients {
 			err := client.WriteJSON(msg)
 			if err != nil {
-				log.Printf("error: %v", err)
+				color.Yellow("error: %v", err)
 				client.Close()
 				delete(clients, client)
 			}
