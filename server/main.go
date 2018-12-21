@@ -22,9 +22,9 @@ var upgrader = websocket.Upgrader{
 
 // Define our message object
 type Message struct {
-	Room    string `json:"room"`
-	Id string `json:"id"`
-	Input  string `json:"input"`
+	Room	string `json:"room"`
+	Id		string `json:"id"`
+	Input	string `json:"input"`
 }
 
 func main() {
