@@ -94,7 +94,7 @@ if (typeof jQuery !== 'undefined') {
                     }
                 });
 
-                self.zoomed = false;
+                self.zoomed = true;
                 self.buttons.zoom.click(function() {
                     if (self.zoomed) {
                         self.screen.animate({
@@ -103,8 +103,7 @@ if (typeof jQuery !== 'undefined') {
                         });
                         self.buttons.zoom.attr("value", "zoom in");
                         self.zoomed = false;
-                    }
-                    else {
+                    } else {
                         self.screen.animate({
                             width: '512px',
                             height: '480px'

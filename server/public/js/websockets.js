@@ -15,5 +15,5 @@ ws.onopen = function (e){
     // correctLevel : QRCode.CorrectLevel.H
   });
 
-	ws.send('{"roomId": 0, "error": "", "key": 1}');
+	ws.send('{"event": "sql", "query": "requestGames"}');
 };

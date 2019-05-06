@@ -13,6 +13,9 @@ function initController(run) {
     let data = JSON.parse(event.data);
     if (data.roomId == game.roomId) {
       switch (data.event) {
+        case 'sql':
+          display(data.result);
+          break;
         case 'input':
           handleInput(data);
           break;

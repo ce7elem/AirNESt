@@ -8,7 +8,7 @@ const mysql = require('mysql');
 
 const databaseWrapper = require('./db_wrapper.js');
 var config = {
-    host: '127.0.0.1',
+    host: '192.168.0.192',
     user: 'root',
     password: '',
     database: 'AirNESt',
@@ -23,10 +23,6 @@ var database = new databaseWrapper.Database(mysql, config);
 app.use(require('express').static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-  let query = 'SELECT * FROM Game;'
-    database.query(query).then(rows => {
-      console.log(rows);
-    })
   res.sendFile(__dirname + '/index.html');
 });
 
@@ -50,13 +46,32 @@ wss.on('connection', function connection(ws) {
   ws.send('{"event" : "connection"}')
 
   ws.on('message', function incoming(data) {
-    console.log(data);
-    // Broadcast to everyone else.
-    wss.clients.forEach(function each(client) {
-      if (client !== ws && client.readyState === WebSocket.OPEN) {
-        client.send(data);
-      }
-    });
+
+    const socket = JSON.parse(data);
+
+    switch (data.event) {
+      case 'input':
+          // Broadcast to everyone else.
+          wss.clients.forEach(function each(client) {
+            if (client !== ws && client.readyState === WebSocket.OPEN) {
+              client.send(data);
+            }
+          });
+        break;
+      case 'sql':
+        switch (data.query) {
+          case 'requestGames':
+            let query = 'SELECT * FROM Game;';
+            database.query(query).then(rows => {
+              ws.send('{"event": "sql", "query": "requestGames", "result":' +rows+ '}');
+            })
+            break;
+          default:
+
+        }
+      default:
+
+    }
   });
 });
 
