@@ -2,20 +2,30 @@
 const app = require('express')();
 const server = require("http").createServer(app);
 const WebSocket = require('ws');
-/*
+
 const mysql = require('mysql');
-const jsSHA = require("jssha");
+// const jsSHA = require("jssha");
+
 const databaseWrapper = require('./db_wrapper.js');
+var config = {
+    host: '192.168.0.192',
+    user: 'root',
+    password: 'CmdCouseau',
+    database: 'AirNESt'
+};
 var database = new databaseWrapper.Database(mysql, config);
-*/
+
 
 /******************************************************************************/
 
 app.use(require('express').static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-
-    res.sendFile(__dirname + '/index.html');
+  let query = 'SELECT * FROM Client;'
+    database.query(query).then(rows => {
+      console.log(rows);
+    })
+  res.sendFile(__dirname + '/index.html');
 });
 
 /******************************************************************************/

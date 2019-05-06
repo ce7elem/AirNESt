@@ -28,14 +28,62 @@ div#header{
 #header #center{
   flex: 2;
 }
-#header #hleft{
+#hleft{
   flex: 1;
   color : rgb(47, 54, 136)
 }
-#header #hright{
+#hright{
   flex: 1;
   color: rgb(185, 35, 35)
 }
+
+
+.switch-field {
+	display: flex;
+	margin-bottom: 36px;
+	overflow: hidden;
+}
+
+.switch-field input {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	width: 1px;
+	border: 0;
+	overflow: hidden;
+}
+
+.switch-field label {
+	background-color: #e4e4e4;
+	color: rgba(0, 0, 0, 0.6);
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	padding: 8px 16px;
+	margin-right: -1px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+	transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+	cursor: pointer;
+}
+
+.switch-field input:checked + label {
+	background-color: #a5dc86;
+	box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+	border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+	border-radius: 0 4px 4px 0;
+}
+
+
 
 #center p{
   opacity: 0.7;
@@ -49,12 +97,16 @@ img{
 
 button{
   position: absolute;
-  opacity: 0;
+  /* opacity: 0; */
 }
 button:active{
   opacity: 0.30;
   background-color: grey;
 }
+
+
+/* BUTTONS EMPLACEMENT */
+
 
 #A{
   bottom: 6vw;
@@ -110,67 +162,4 @@ button:active{
   left: 20vw;
   width: 12vw;
   height: 10vw;
-}
-
-
-.connection {
-  position: relative;
-
-  display: block;
-  margin: 30px auto;
-  padding: 0;
-
-  overflow: hidden;
-
-  border-width: 0;
-  outline: none;
-  border-radius: 2px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-
-  background-color: #616161;
-  color: #ecf0f1;
-
-  transition: background-color .3s;
-}
-
-.connection:hover, .connection:focus {
-  background-color: #6c6c6c;
-}
-
-.connection > * {
-  position: relative;
-}
-
-.connection span {
-  display: block;
-  padding: 12px 24px;
-}
-
-.connection:before {
-  content: "";
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-
-  display: block;
-  width: 0;
-  padding-top: 0;
-
-  border-radius: 100%;
-
-  background-color: rgba(236, 240, 241, .3);
-
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.connection:active:before {
-  width: 120%;
-  padding-top: 120%;
-
-  transition: width .2s ease-out, padding-top .2s ease-out;
 }

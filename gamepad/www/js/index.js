@@ -5,7 +5,7 @@
     player: 0
   }
 
-  const host = '192.168.0.181' //HOST IP
+  const host = '192.168.0.189' //HOST IP
 
   let ws = new WebSocket('ws://' + host + ':8080')
 
