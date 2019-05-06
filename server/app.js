@@ -8,10 +8,12 @@ const mysql = require('mysql');
 
 const databaseWrapper = require('./db_wrapper.js');
 var config = {
-    host: '192.168.0.192',
+    host: '127.0.0.1',
     user: 'root',
-    password: 'CmdCouseau',
-    database: 'AirNESt'
+    password: '',
+    database: 'AirNESt',
+    insecureAuth: true,
+    port : 3306,
 };
 var database = new databaseWrapper.Database(mysql, config);
 
@@ -21,7 +23,7 @@ var database = new databaseWrapper.Database(mysql, config);
 app.use(require('express').static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-  let query = 'SELECT * FROM Client;'
+  let query = 'SELECT * FROM Game;'
     database.query(query).then(rows => {
       console.log(rows);
     })
