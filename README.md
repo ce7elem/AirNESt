@@ -24,6 +24,9 @@ Building AirNESt
 - Build the mobile app :
 You will need [cordova](https://cordova.apache.org).
 ```
+  $ cordova create airnest_gamepad
+  $ # copy the git's /gamepad/* in the folder
+  $ cordova platform add android
   $ cordova build android
 ```
 

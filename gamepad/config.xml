@@ -2,7 +2,7 @@
 <widget id="com.servicepublic.airnest" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>AirNESt Gamepad</name>
     <description>
-		God your not ready..
+  		God you're not ready..
     </description>
     <author email="olivier.benaben@protonmail.com" href="">
         SERVICEPUBLIC Developement Team
@@ -25,5 +25,5 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <preference name="Orientation" value="sensorLandscape" />
-    <engine name="android" spec="^7.1.1" />
+    <engine name="android" spec="^7.1.4" />
 </widget>

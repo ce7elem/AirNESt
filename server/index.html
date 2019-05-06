@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>JSNES: A JavaScript NES emulator</title>
+</head>
+
+<body>
+    <h1>JSNES</h1>
+
+    <div id="emulator"></div>
+
+
+    <div id="qrcode"></div>
+
+    <script src="http://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js" charset="utf-8"></script>
+
+    <script src="js/controller.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/websockets.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="JSNES/lib/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="JSNES/lib/dynamicaudio-min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="JSNES/source/nes.js" type="text/javascript" charset="utf-8"></script>
+    <script src="JSNES/source/utils.js" type="text/javascript" charset="utf-8"></script>
+    <script src="JSNES/source/cpu.js" type="text/javascript" charset="utf-8"></script>
+    <script src="JSNES/source/keyboard.js" type="text/javascript" charset="utf-8"></script>
+    <script src="JSNES/source/mappers.js" type="text/javascript" charset="utf-8"></script>
+    <script src="JSNES/source/papu.js" type="text/javascript" charset="utf-8"></script>
+    <script src="JSNES/source/ppu.js" type="text/javascript" charset="utf-8"></script>
+    <script src="JSNES/source/rom.js" type="text/javascript" charset="utf-8"></script>
+    <script src="JSNES/source/ui.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        var nes;
+        $(function() {
+            nes = new JSNES({
+                'ui': $('#emulator').JSNESUI({
+                    "Homebrew": [
+                        ['Concentration Room', 'roms/croom/croom.nes'],
+                        ['LJ65', 'roms/lj65/lj65.nes'],
+                    ]
+                })
+            });
+        });
+    </script>
+    <!--[if IE]>
+      "Homebrew": [
+          Concentration Room
+          LJ65
+      ],
+      "Working": [
+          Bubble Bobble
+
+          Contra
+          Donkey Kong
+          Dr. Mario
+          Golf
+          The Legend of Zelda
+          Lemmings
+          Lifeforce
+
+          Mario Bros.
+          Mega Man
+          Pac-Man
+          Super Mario Bros.
+          Tennis
+          Tetris
+          Tetris 2
+          Zelda II - The Adventure of Link
+    <![endif]-->
+
+</body>
+</html>

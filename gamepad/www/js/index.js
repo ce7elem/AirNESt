@@ -1,11 +1,53 @@
 (function(){
-  const host = '' //HOST IP
 
-  // document.addEventListener('deviceready', () => {
-  let ws = new WebSocket('ws://' + host + ':8888');
-  // ws.onmessage = function (event) {
-  //   log(event);
-  // };
+  let game = {
+    roomId: 0,
+    player: 0
+  }
+
+  const host = '192.168.0.181' //HOST IP
+
+  let ws = new WebSocket('ws://' + host + ':8080')
+
+ window.testws = function () {
+   ws.send('tset')
+ }
+
+  ws.onmessage = function (event) {
+    let data = JSON.parse(event.data);
+
+    if (data.roomId == game.roomId){
+
+      switch (data.event) {
+        case 'error':
+          notif("Connection with the game has ended");
+          log(data.error);
+          break;
+        case 'connection':
+          log("connected");
+          break;
+        case 'joinedRoom':
+          notif("Connected");
+        default:
+      }
+
+    }
+  };
+
+  window.addEventListener('onerror', (message)=>{
+    log("ERROR :: " + " : " + message)
+  })
+
+function notif(msg){
+  log("NOTIF : "+ msg)
+  console.log(msg);
+}
+
+function log(msg){
+  document.getElementById('logs').innerHTML += "<p> " + msg + "</p>"
+}
+
+  // Key bindings
 
   const controllerInput = {
     KEY_DOWN: 1,
@@ -14,88 +56,84 @@
   }
 
   document.getElementById('A').addEventListener('touchstart', () => {
-    ws.send('{"type": ' + controllerInput.KEY_DOWN + ',"key" :"A"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_DOWN + ',"key" :"'+ game.player+0 +'"}');
   });
   document.getElementById("A").addEventListener('touchend', () => {
-    ws.send('{"type": ' + controllerInput.KEY_UP + ',"key" :"A"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_UP + ',"key" :"'+ game.player+0 +'"}');
   });
   document.getElementById("A").addEventListener('click', () => {
-    ws.send('{"type": ' + controllerInput.KEY_PRESS + ',"key" :"A"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_PRESS + ',"key" :"'+ game.player+0 +'"}');
+    log("A")
   });
 
   document.getElementById("B").addEventListener('touchstart', () => {
-    ws.send('{"type": ' + controllerInput.KEY_DOWN + ',"key" :"B"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_DOWN + ',"key" :"'+ game.player+1 +'"}');
   });
   document.getElementById("B").addEventListener('touchend', () => {
-    ws.send('{"type": ' + controllerInput.KEY_UP + ',"key" :"B"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_UP + ',"key" :"'+ game.player+1 +'"}');
   });
   document.getElementById("B").addEventListener('click', () => {
-    ws.send('{"type": ' + controllerInput.KEY_PRESS + ',"key" :"B"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_PRESS + ',"key" :"'+ game.player+1 +'"}');
   });
 
   document.getElementById("up").addEventListener('touchstart', () => {
-    ws.send('{"type": ' + controllerInput.KEY_DOWN + ',"key" :"up"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_DOWN + ',"key" :"'+ game.player+4 +'"}');
   });
   document.getElementById("up").addEventListener('touchend', () => {
-    ws.send('{"type": ' + controllerInput.KEY_UP + ',"key" :"up"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_UP + ',"key" :"'+ game.player+4 +'"}');
   });
   document.getElementById("up").addEventListener('click', () => {
-    ws.send('{"type": ' + controllerInput.KEY_PRESS + ',"key" :"up"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_PRESS + ',"key" :"'+ game.player+4 +'"}');
   });
 
   document.getElementById("down").addEventListener('touchstart', () => {
-    ws.send('{"type": ' + controllerInput.KEY_DOWN + ',"key" :"down"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_DOWN + ',"key" :"'+ game.player+5 +'"}');
   });
   document.getElementById("down").addEventListener('touchend', () => {
-    ws.send('{"type": ' + controllerInput.KEY_UP + ',"key" :"down"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_UP + ',"key" :"'+ game.player+5 +'"}');
   });
   document.getElementById("down").addEventListener('click', () => {
-    console.log("down");
-    ws.send('{"type": ' + controllerInput.KEY_PRESS + ',"key" :"down"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_PRESS + ',"key" :"'+ game.player+5 +'"}');
   });
 
   document.getElementById("left").addEventListener('touchstart', () => {
-    ws.send('{"type": ' + controllerInput.KEY_DOWN + ',"key" :"left"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_DOWN + ',"key" :"'+ game.player+6 +'"}');
   });
   document.getElementById("left").addEventListener('touchend', () => {
-    ws.send('{"type": ' + controllerInput.KEY_UP + ',"key" :"left"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_UP + ',"key" :"'+ game.player+6 +'"}');
   });
   document.getElementById("left").addEventListener('click', () => {
-    console.log('left');
-
-    ws.send('{"type": ' + controllerInput.KEY_PRESS + ',"key" :"left"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_PRESS + ',"key" :"'+ game.player+6 +'"}');
   });
 
   document.getElementById("right").addEventListener('touchstart', () => {
-    ws.send('{"type": ' + controllerInput.KEY_DOWN + ',"key" :"right"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_DOWN + ',"key" :"'+ game.player+7 +'"}');
   });
   document.getElementById("right").addEventListener('touchend', () => {
-    ws.send('{"type": ' + controllerInput.KEY_UP + ',"key" :"right"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_UP + ',"key" :"'+ game.player+7 +'"}');
   });
   document.getElementById("right").addEventListener('click', () => {
-    ws.send('{"type": ' + controllerInput.KEY_PRESS + ',"key" :"right"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_PRESS + ',"key" :"'+ game.player+7 +'"}');
   });
 
   document.getElementById("start").addEventListener('touchstart', () => {
-    ws.send('{"type": ' + controllerInput.KEY_DOWN + ',"key" :"start"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_DOWN + ',"key" :"'+ game.player+3 +'"}');
   });
   document.getElementById("start").addEventListener('touchend', () => {
-    ws.send('{"type": ' + controllerInput.KEY_UP + ',"key" :"start"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_UP + ',"key" :"'+ game.player+3 +'"}');
   });
   document.getElementById("start").addEventListener('click', () => {
-    ws.send('{"type": ' + controllerInput.KEY_PRESS + ',"key" :"start"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_PRESS + ',"key" :"'+ game.player+3 +'"}');
   });
 
   document.getElementById("select").addEventListener('touchstart', () => {
-    ws.send('{"type": ' + controllerInput.KEY_DOWN + ',"key" :"select"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_DOWN + ',"key" :"'+ game.player+2 +'"}');
   });
   document.getElementById("select").addEventListener('touchend', () => {
-    ws.send('{"type": ' + controllerInput.KEY_UP + ',"key" :"select"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_UP + ',"key" :"'+ game.player+2 +'"}');
   });
   document.getElementById("select").addEventListener('click', () => {
-    ws.send('{"type": ' + controllerInput.KEY_PRESS + ',"key" :"select"}');
+    ws.send('{"roomId": '+game.roomId+', "event": "input", "type": ' + controllerInput.KEY_PRESS + ',"key" :"'+ game.player+2 +'"}');
   });
+
 })();
-
-
-// });

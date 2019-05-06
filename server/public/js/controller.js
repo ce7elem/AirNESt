@@ -1,44 +1,48 @@
-
 const controllerInput = {
   KEY_DOWN: 1,
   KEY_UP: 2,
   KEY_PRESS: 3
 }
 
+let game = {
+  roomId: 0
+}
+
 function initController(run) {
   ws.onmessage = function(event) {
     let data = JSON.parse(event.data);
-
-    if (data.room == game.room) {
-      handleInput(data.input.type);
+    if (data.roomId == game.roomId) {
+      switch (data.event) {
+        case 'input':
+          handleInput(data);
+          break;
+        case 'error':
+          notif("Something went wrong...");
+          console.log(data.error);
+          break;
+        case 'connection':
+          notif("new connected");
+          break;
+        default:
+          console.log(data);
+      }
     }
 
   };
 }
 
 function handleInput(input){
-
-  switch (input) {
+  switch (input.type) {
     case controllerInput.KEY_DOWN:
-      run.nes.keyboard.keyDown(input.key);
+      window.endpoint.nes.keyboard.keyDown(input);
     break;
     case controllerInput.KEY_UP:
-      run.nes.keyboard.keyUp(input.key);
+      window.endpoint.nes.keyboard.keyUp(input);
     break;
     case controllerInput.KEY_PRESS:
-      run.nes.keyboard.keyPress(input.key);
+      window.endpoint.nes.keyboard.keyPress(input);
     break;
+		default:
   }
 
 }
-
-// $(document).
-//     bind('keydown', function(evt) {
-//         self.nes.keyboard.keyDown(evt);
-//     }).
-//     bind('keyup', function(evt) {
-//         self.nes.keyboard.keyUp(evt);
-//     }).
-//     bind('keypress', function(evt) {
-//         self.nes.keyboard.keyPress(evt);
-//     });
