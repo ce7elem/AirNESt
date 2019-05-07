@@ -15,7 +15,6 @@ CREATE TABLE Game
 	editor VARCHAR(40) NOT NULL,
 	date_sortie DATE NOT NULL,
 	category VARCHAR(40),
-	score TEXT,
 	comment TEXT,
 	PRIMARY KEY (id))
 ENGINE=INNODB;
@@ -31,13 +30,20 @@ password='AZE',
 birth_day='2010-07-21',
 email='commandant.cousteau@gmail.com';
 
+#Inserer un nouveau jeu
+INSERT INTO Game 
+SET name='AZE',
+editor='AZE',
+date_sortie='2010-07-21',
+comment='oh con les coms';
+
 #Afficher tous les jeux et les details triller par date de sortie
 SELECT * FROM Game
 ORDER BY date_sortie;
 
 #Afficher tous les jeux mais juste les noms triller par nom
-SELECT nom FROM Game;
-ORDER BY nom;
+SELECT name FROM Game;
+ORDER BY name;
 
 #Modification du login
 ALTER TABLE Client
