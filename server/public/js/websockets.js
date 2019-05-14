@@ -1,5 +1,5 @@
 
-const host = '127.0.0.1' //host ip
+const host = '192.168.0.181' //host ip
 
 let ws = new WebSocket('ws://' + window.location.host);
 

@@ -14,7 +14,7 @@ function initController(run) {
     if (data.roomId == game.roomId) {
       switch (data.event) {
         case 'sql':
-          display(data.result);
+          display("[SQL] " + data.result);
           break;
         case 'input':
           handleInput(data);

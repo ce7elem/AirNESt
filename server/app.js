@@ -61,6 +61,7 @@ wss.on('connection', function connection(ws) {
       case 'sql':
         switch (data.query) {
           case 'requestGames':
+            console.log("[SQL] New connection : sending Games");
             let query = 'SELECT * FROM Game ORDER BY name;';
             database.query(query).then(rows => {
               ws.send('{"event": "sql", "query": "requestGames", "result":' +rows+ '}');
