@@ -15,5 +15,6 @@ ws.onopen = function (e){
     // correctLevel : QRCode.CorrectLevel.H
   });
 
+  console.log("request games");
 	ws.send('{"event": "sql", "query": "requestGames"}');
 };

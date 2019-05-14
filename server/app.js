@@ -8,9 +8,9 @@ const mysql = require('mysql');
 
 const databaseWrapper = require('./db_wrapper.js');
 var config = {
-    host: '192.168.0.192',
+    host: '127.0.0.1',
     user: 'root',
-    password: '',
+    password: 'toor',
     database: 'AirNESt',
     insecureAuth: true,
     port : 3306,
@@ -47,7 +47,9 @@ wss.on('connection', function connection(ws) {
 
   ws.on('message', function incoming(data) {
 
-    const socket = JSON.parse(data);
+    data = JSON.parse(data);
+    console.log(data);
+    console.log(data.event);
 
     switch (data.event) {
       case 'input':
@@ -59,12 +61,13 @@ wss.on('connection', function connection(ws) {
           });
         break;
       case 'sql':
+      console.log("[SQL] new request");
         switch (data.query) {
           case 'requestGames':
             console.log("[SQL] New connection : sending Games");
             let query = 'SELECT * FROM Game ORDER BY name;';
             database.query(query).then(rows => {
-              ws.send('{"event": "sql", "query": "requestGames", "result":' +rows+ '}');
+              ws.send('{"event": "sql", "query": "requestGames", "result":' +JSON.stringify(rows)+ '}');
             })
             break;
           default:

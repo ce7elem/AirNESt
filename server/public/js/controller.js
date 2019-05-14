@@ -11,14 +11,18 @@ let game = {
 function initController(run) {
   ws.onmessage = function(event) {
     let data = JSON.parse(event.data);
-    if (data.roomId == game.roomId) {
       switch (data.event) {
         case 'sql':
-          display("[SQL] " + data.result);
+          for (let i of data.result){
+            console.log(i);
+            display(i);
+          }
           break;
         case 'input':
-          handleInput(data);
-          break;
+          if (data.roomId == game.roomId) {
+            handleInput(data);
+            break;
+          }
         case 'error':
           notif("Something went wrong...");
           console.log(data.error);
@@ -29,7 +33,6 @@ function initController(run) {
         default:
           console.log(data);
       }
-    }
 
   };
 }
