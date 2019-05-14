@@ -77,10 +77,10 @@ wss.on('connection', function connection(ws) {
             })
             break;
           default:
-
+            console.log("[WS] ERROR: default1");
         }
       default:
-
+        console.log("[WS] ERROR: default2");
     }
   });
 });

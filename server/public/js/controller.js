@@ -13,10 +13,7 @@ function initController(run) {
     let data = JSON.parse(event.data);
       switch (data.event) {
         case 'sql':
-          for (let i of data.result){
-            console.log(i);
-            display(i);
-          }
+          display(data.result);
           break;
         case 'input':
           if (data.roomId == game.roomId) {

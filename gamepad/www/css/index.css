@@ -109,31 +109,31 @@ button:active{
 
 
 #A{
-  bottom: 6vw;
-  right: 10vw;
-  width: 13vw;
-  height: 12vw;
+  bottom: 1vw;
+  right: 2vw;
+  width: 20vw;
+  height: 25vw;
 }
 
 #B{
-  bottom: 6vw;
+  bottom: 1vw;
   right: 22vw;
-  width: 13vw;
-  height: 12vw;
+  width: 16vw;
+  height: 25vw;
 }
 
 #start{
-  bottom: 7vw;
+  bottom: 2vw;
   right: 40vw;
   width: 12vw;
-  height: 10vw;
+  height: 20vw;
 }
 
 #select{
-  bottom: 7vw;
+  bottom: 2vw;
   right: 52vw;
   width: 12vw;
-  height: 10vw;
+  height: 20vw;
 }
 
 #up{

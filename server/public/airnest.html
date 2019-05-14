@@ -20,32 +20,19 @@
 
 <body class="has-background-grey">
 
-  <div class="navbar  has-background-grey-lighter">
+  <div class="navbar  has-background-grey-lighter" style="padding: 0 100px 0 100px;">
     <div class="navbar-brand">
-      <a class="navbar-item">
-        <img src="" width="80" height="50" alt="Logo">
+      <a class="navbar-item" href="/">
+        <img src="/images/logo.png" width="100" alt="Logo">
       </a>
-    </div>
-    <div class="navbar-menu r">
-      <div class="navbar-item">
-        <div class="control has-icons-left">
-          <input class="input is-small has-text-centered" type="text" placeholder="search">
-          <span class="icon is-left is-small">
-            <i class="material-icons">search</i>
-          </span>
-        </div>
-      </div>
     </div>
     <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item is-active" href="../html/AirnestChoix2.html">Home</a>
-        <a class="navbar-item">Examples</a>
-        <a class="navbar-item">Features</a>
-        <a class="navbar-item">Team</a>
-        <a class="navbar-item">Archives</a>
-        <a class="navbar-item">Help</a>
+        <a class="navbar-item is-active" href="/">Home</a>
+        <a class="navbar-item" href="/team">Team</a>
+        <a class="navbar-item" href="/help">Help</a>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-item" href="../html/airNESt.html">
+          <a class="navbar-item" href="/">
             <i class="material-icons">person_outline</i>
           </a>
 
@@ -54,17 +41,12 @@
             <a class="navbar-item">Profile</a>
             <a class="Settings">
               <hr class="navbar-divider">
-              <div class="navbar-item">Logout</div>
+                <div class="navbar-item">Logout</div>
               </hr>
             </a>
           </div>
         </div>
       </div>
-    </div>
-    <div class="navbar-item is-flex-touch">
-      <a class="navbar-item">
-        <i class="nes-icon heart is-empty is-small" id="coeur_page"> </i>
-      </a>
     </div>
   </div>
 
@@ -82,7 +64,7 @@
       </div>
 
       <!-- Games -->
-      <div class="row columns" id="sql_ResultGames">
+      <div class="row columns" id="sql_ResultGames" style="flex-wrap: wrap;">
       </div>
       <!-- End Games -->
     </div>
@@ -104,7 +86,7 @@
   <script src="js/controller.js" type="text/javascript" charset="utf-8"></script>
 
   <script type="text/javascript">
-    const host = '192.168.0.181' //host ip
+    const host = '192.168.0.189' //host ip
 
     let ws = new WebSocket('ws://' + window.location.host);
 
