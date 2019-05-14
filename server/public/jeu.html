@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Airnest</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.7.4-->
+
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.4/css/bulma.min.css" />
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+
+  </head>
+
+  <body class="has-background-grey">
+    <div class="navbar  has-background-grey-lighter">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="" width="80" height="50" alt="Logo">
+        </a>
+      </div>
+      <div class="navbar-menu r">
+        <div class="navbar-item">
+          <div class="control has-icons-left">
+            <input class="input is-small has-text-centered" type="text" placeholder="search">
+            <span class="icon is-left is-small">
+              <i class="material-icons">search</i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item is-active" href="../html/AirnestChoix2.html">Home</a>
+          <a class="navbar-item">Examples</a>
+          <a class="navbar-item">Features</a>
+          <a class="navbar-item">Team</a>
+          <a class="navbar-item">Archives</a>
+          <a class="navbar-item">Help</a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-item" href="../html/airNESt.html">
+              <i class="material-icons">person_outline</i>
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                Dashboard
+                <a class="navbar-item">
+                  Profile
+                </a>
+                <a class="Settings">
+                  <hr class="navbar-divider">
+                  <div class="navbar-item">
+                    Logout
+                  </div>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-item is-flex-touch">
+        <a class="navbar-item">
+          <i class="nes-icon heart is-empty is-small" id="coeur_page"> </i>
+        </a>
+      </div>
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+    <div class="columns body-columns">
+      <div class="column is-half is-offset-one-quarter">
+        <div class="card has-background-grey-lighter " style="border-style: outset; border-width: 3px;">
+          <div class="header has-background-grey-lighter">
+            <div class="media">
+              <div class="media-content">
+                <span class="nes-text title" id="titre">Super Mario Bros. 3</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="./images/image.jpg" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="level is-mobile">
+              <div class="level-left">
+                <div class="level-item has-text-centered">
+                  <i class="nes-icon is-medium heart is-empty" id="coeur_jeu"></i>
+                </div>
+                <div class="level-item has-text-centered ">
+                  <i class="nes-logo" id="nes_logo"></i>
+                  <div class="nes-balloon from-left" id="bulle">
+                    <p>link gamepads</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content">
+              <p>
+                <strong id="nombre_like">20</strong> Likes
+              </p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="columns is-mobile">
+              <div class="column is-11">
+                <div class="field">
+                  <div class="control">
+                    <label for="textarea_field">Comments</label>
+                    <textarea id="textarea_field" class="nes-textarea"> </textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="column has-text-centered">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let like_page = false;
+      let nombre_like = document.getElementById('nombre_like');
+      let coeur_page = document.getElementById('coeur_page');
+      likes = nombre_like.innerHTML;
+      likes = parseInt(likes);
+
+      coeur_page.addEventListener('click', function() {
+
+        if (like_page == false) {
+          coeur_page.setAttribute('class', 'nes-icon is-small heart');
+          like_page = true;
+
+        } else if (like_page == true) {
+          coeur_page.setAttribute('class', 'nes-icon is-small heart is-empty');
+          like_page = false;
+        }
+      });
+
+      var like_jeu = false;
+      var coeur_jeu = document.getElementById('coeur_jeu');
+
+      coeur_jeu.addEventListener('click', function() {
+        if (like_jeu == false) {
+          coeur_jeu.setAttribute('class', 'nes-icon is-medium heart');
+          like_jeu = true;
+          likes += 1;
+        } else if (like_jeu == true) {
+          coeur_jeu.setAttribute('class', 'nes-icon is-medium heart is-empty');
+          like_jeu = false;
+          likes -= 1;
+        }
+
+        nombre_like.innerHTML = likes;
+      });
+
+      var bulle = document.getElementById('bulle');
+      var nes_logo = document.getElementById('nes_logo');
+
+      nes_logo.addEventListener('mouseover', function() {
+        bulle.setAttribute('style', '  z-index: 8; background-color: white; color: black; visibility: visible; opacity : 0.65; ');
+      });
+
+      nes_logo.addEventListener('mouseout', function() {
+        bulle.setAttribute('style', '  z-index: 8; background-color: white; visibility: hidden; ');
+      });
+    </script>
+
+
+    <style>
+      #bulle {
+
+        z-index: 8;
+        background-color: white;
+        visibility: hidden;
+        position: relative;
+        top: -2em;
+        left: 19em;
+      }
+
+      #titre {
+        color: #E32C06;
+      }
+
+      #nes_logo {
+        position: relative;
+        left: 20em;
+        top: 0em;
+      }
+    </style>
+
+    <footer class="footer has-background-grey-darker">
+      <div class="container is-fluid">
+        <div class="content has-text-centered" id="fin">
+          <p>
+            Airnest by
+            <a href="https://github.com/Arveto">Arveto</a>. The website content is licensed
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>

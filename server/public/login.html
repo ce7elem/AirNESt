@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - Free Bulma template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <!-- Bulma Version 0.7.2-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+    <div class="navbar  has-background-grey-lighter">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="" width="80" height="50" alt="Logo">
+        </a>
+      </div>
+      <div class="navbar-menu r">
+        <div class="navbar-item">
+          <div class="control has-icons-left">
+            <input class="input is-small has-text-centered" type="text" placeholder="search">
+            <span class="icon is-left is-small">
+              <i class="material-icons">search</i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item is-active" href="../html/AirnestChoix2.html">Home</a>
+          <a class="navbar-item">Examples</a>
+          <a class="navbar-item">Features</a>
+          <a class="navbar-item">Team</a>
+          <a class="navbar-item">Archives</a>
+          <a class="navbar-item">Help</a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-item" href="../html/airNESt.html">
+              <i class="material-icons">person_outline</i>
+            </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item">Dashboard</a>
+              <a class="navbar-item">Profile</a>
+              <a class="Settings">
+                <hr class="navbar-divider">
+                  <div class="navbar-item">Logout</div>
+                </hr>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-item is-flex-touch">
+        <a class="navbar-item">
+          <i class="nes-icon heart is-empty is-small" id="coeur_page"> </i>
+        </a>
+      </div>
+    </div>
+
+    <section class="hero is-success is-fullheight has-background-grey">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <div class="column is-4 is-offset-4">
+            <h3 class="title has-text-grey-dark">Login</h3>
+            <p class="subtitle has-text-grey-dark">Please login to proceed.</p>
+            <div class="box has-background-grey-light">
+              <figure class="avatar">
+                <img src="">
+              </figure>
+              <form>
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-large " type="email" placeholder="Your Email" autofocus="" id="mail">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-large" type="password" placeholder="Your Password" id="password">
+                  </div>
+                </div>
+                <button type="button" class="nes-btn is-error" href="" id="login">Login</button>
+              </form>
+            </div>
+            <p class="has-text-black">
+              <a href="../">Sign Up</a> &nbsp;·&nbsp;
+              <a href="../">Forgot Password</a> &nbsp;·&nbsp;
+              <a href="../">Need Help?</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script async type="text/javascript" src="../js/bulma.js"></script>
+    <script>
+      const login = document.getElementById('login');
+
+      login.addEventListener('click', function() {
+        let mail = document.getElementById('mail').value;
+        let password = document.getElementById('password').value;
+
+        if (mail == 'aze' && password == 'aze') {
+          document.location.href = "/AirNESt";
+        } else {
+          alert('mot de passe faux');
+        }
+      })
+    </script>
+
+  </body>
+
+</html>
