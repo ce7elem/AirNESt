@@ -23,10 +23,13 @@ var database = new databaseWrapper.Database(mysql, config);
 app.use(require('express').static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
-app.get('/airnest', (req, res) => {
   res.sendFile(__dirname + '/public/airnest.html');
+});
+app.get('/login', (req, res) => {
+  res.sendFile(__dirname + '/public/login.html');
+});
+app.get('/game', (req, res) => {
+  res.sendFile(__dirname + '/public/jeu.html');
 });
 
 /******************************************************************************/

@@ -44,14 +44,14 @@ if (typeof jQuery !== 'undefined') {
                 }
 
                 self.romContainer = $('<div class="nes-roms"></div>').appendTo(self.root);
-                self.romSelect = $('<select></select>').appendTo(self.romContainer);
+                // self.romSelect = $('<select></select>').appendTo(self.romContainer);
 
                 self.controls = $('<div class="nes-controls"></div>').appendTo(self.root);
                 self.buttons = {
                     pause: $('<input type="button" value="pause" class="nes-pause" disabled="disabled">').appendTo(self.controls),
                     restart: $('<input type="button" value="restart" class="nes-restart" disabled="disabled">').appendTo(self.controls),
                     sound: $('<input type="button" value="enable sound" class="nes-enablesound">').appendTo(self.controls),
-                    zoom: $('<input type="button" value="zoom in" class="nes-zoom">').appendTo(self.controls)
+                    zoom: $('<input type="button" value="zoom in" id="zoom" class="nes-zoom">').appendTo(self.controls)
                 };
                 self.status = $('<p class="nes-status">Booting up...</p>').appendTo(self.root);
                 self.root.appendTo(parent);
@@ -59,9 +59,9 @@ if (typeof jQuery !== 'undefined') {
                 /*
                  * ROM loading
                  */
-                self.romSelect.change(function() {
+                // self.romSelect.change(function() {
                     self.loadROM();
-                });
+                // });
 
                 /*
                  * Buttons
@@ -136,10 +136,10 @@ if (typeof jQuery !== 'undefined') {
                     });
                 }
 
-                if (typeof roms != 'undefined') {
+/*                if (typeof roms != 'undefined') {
                     self.setRoms(roms);
                 }
-
+*/
                 /*
                  * Canvas
                  */
@@ -187,7 +187,7 @@ if (typeof jQuery !== 'undefined') {
                     var self = this;
                     self.updateStatus("Downloading...");
                     $.ajax({
-                        url: escape(self.romSelect.val()),
+                        url: escape(window.romSelect),
                         xhr: function() {
                             var xhr = $.ajaxSettings.xhr();
                             if (typeof xhr.overrideMimeType !== 'undefined') {
@@ -263,7 +263,7 @@ if (typeof jQuery !== 'undefined') {
                 updateStatus: function(s) {
                     this.status.text(s);
                 },
-
+/*
                 setRoms: function(roms) {
                     this.romSelect.children().remove();
                     $("<option>Select a ROM...</option>").appendTo(this.romSelect);
@@ -280,7 +280,7 @@ if (typeof jQuery !== 'undefined') {
                         }
                     }
                 },
-
+*/
                 writeAudio: function(samples) {
                     return this.dynamicaudio.writeInt(samples);
                 },
