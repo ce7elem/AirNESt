@@ -2,423 +2,121 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Choix Airnest</title>
-    <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
-    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css'>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/cards.css">
-    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <title>Airnest</title>
+  <link rel="shortcut icon" href="../images/fav_icon.png" type="image/x-icon">
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css'>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/cards.css">
+  <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+  <style media="screen">
+  *{
+    font-family: 'Share Tech Mono', monospace;
+  }
+  </style>
 </head>
 
 <body class="has-background-grey">
-     <script >
 
-
-        function toggle_div( btn, id_div )
-{
-  btn.innerHTML = (btn.innerHTML == '+')? '-' : '+';
-  btn.title = (btn.title == 'Afficher la suite')? 'Masquer la suite' : 'Afficher la suite';
-  document.getElementById( id_div ).style.display = (document.getElementById( id_div ).style.display == 'none')? 'block' : 'none';
-}
-
-
-
-</script>
-    
-        <!-- START NAV -->
-         <div class="navbar  has-background-grey-lighter" >
-        <div class="navbar-brand">
-            <a class="navbar-item">
-                <img src="" width="80" height="50" alt="Logo">
-            </a>
-        </div>
-        <div class="navbar-menu ">
-            <div class="navbar-item">
-                <div class="control has-icons-left">
-                    <input class="input is-small has-text-centered" type="text" placeholder="search">
-                    <span class="icon is-left is-small">
-                        <i class="material-icons">search</i>
-                    </span>
-                </div>
-            </div>
-        </div> <div id="navbarMenu" class="navbar-menu">
-                        <div class="navbar-end">
-                            <a class="navbar-item is-active" href="../html/AirnestChoix2.html">
-                                    Home
-                                </a>
-                            <a class="navbar-item">
-                                    Examples
-                                </a>
-                            <a class="navbar-item">
-                                    Features
-                                </a>
-                            <a class="navbar-item">
-                                    Team
-                                </a>
-                            <a class="navbar-item">
-                                    Archives
-                                </a>
-                            <a class="navbar-item">
-                                    Help
-                                </a>
-                            <div class="navbar-item has-dropdown is-hoverable">
-                                
-                                      <a class="navbar-item" href="../html/airNESt.html">
-                <i class="material-icons">person_outline</i>
-
-           </a>
-                                <div class="navbar-dropdown">
-                                    <a class="navbar-item">
-                                            Dashboard   
-                                    <a class="navbar-item">
-                                            Profile
-                                        </a>
-                                    <a clas   Settings
-                                        </a>
-                                    <hr class="navbar-divider">
-                                    <div class="navbar-item">
-                                        Logout
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        <div class="navbar-item is-flex-touch">
-           
-            <a class="navbar-item">
-                  <i class="nes-icon heart is-empty is-small" id="coeur_page"> </i>
-            </a>
-         
-        </div>
+  <div class="navbar  has-background-grey-lighter">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <img src="" width="80" height="50" alt="Logo">
+      </a>
     </div>
-           
+    <div class="navbar-menu r">
+      <div class="navbar-item">
+        <div class="control has-icons-left">
+          <input class="input is-small has-text-centered" type="text" placeholder="search">
+          <span class="icon is-left is-small">
+            <i class="material-icons">search</i>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item is-active" href="../html/AirnestChoix2.html">Home</a>
+        <a class="navbar-item">Examples</a>
+        <a class="navbar-item">Features</a>
+        <a class="navbar-item">Team</a>
+        <a class="navbar-item">Archives</a>
+        <a class="navbar-item">Help</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-item" href="../html/airNESt.html">
+            <i class="material-icons">person_outline</i>
+          </a>
 
+          <div class="navbar-dropdown">
+            <a class="navbar-item">Dashboard</a>
+            <a class="navbar-item">Profile</a>
+            <a class="Settings">
+              <hr class="navbar-divider">
+              <div class="navbar-item">Logout</div>
+              </hr>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-item is-flex-touch">
+      <a class="navbar-item">
+        <i class="nes-icon heart is-empty is-small" id="coeur_page"> </i>
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <div class="box has-background-grey-lighter">
+        <div class="field has-addons ">
+          <div class="control is-expanded ">
+            <input class="input has-text-centered is-danger" type="search" placeholder="Search a game">
+          </div>
+          <div class="control">
+            <a class="button is-danger">Search</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Games -->
+      <div class="row columns" id="sql_ResultGames">
+      </div>
+      <!-- End Games -->
+    </div>
+  </div>
+
+  <footer class="footer has-background-grey-darker">
     <div class="container">
-        <div id="flow">
-            <span class="flow-1"></span>
-            <span class="flow-2"></span>
-            <span class="flow-3"></span>
+      <div class="content has-text-centered">
+        <div class="soc">
+          <a href="https://github.com/arveto"><i class="fa fa-github-alt fa-2x" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/ArvetoSoftwares?lang=fr"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
         </div>
-        <div class="section">
-            <div class="box has-background-grey-lighter">
-                <div class="field has-addons ">
-                    <div class="control is-expanded ">
-                        <input class="input has-text-centered is-danger" type="search" placeholder="Search a game">
-                    </div>
-                    <div class="control">
-                        <a class="button is-danger">Search</a> 
-                    </div>
-                </div>
-            </div>
-            <!-- Developers -->
-            <div class="row columns">
-                <div class="column is-one-third">
-                    <div class="card large has-background-grey-lighter">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="https://cdn03.nintendo-europe.com/media/images/03_teaser_module_1_square/games_3/virtual_console_nintendo_3ds_1/TM_3DSVC_MegaMan2.png"
-                                 style="width: 100%; height: 350px;"  alt="Image">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-96x96">
-                                        <img src="https://global-img.gamergen.com/capcom-logo-large_0190000000893704.jpg"  alt="Image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4 no-padding">Megaman II</p>
-                                    <p><span class="title is-6"><a href="https://en.wikipedia.org/wiki/Platform_game">#Plateform</a> <a href="https://en.wikipedia.org/wiki/Action_game"> #Action</a></span></p>
-                                    <p class="subtitle is-6">Notation ici</p>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <div>Mega Man 2 takes place one year after the original Mega Man. After his initial defeat Dr. Wily, the series' main antagonist, creates his own set of Robot Masters in an attempt to counter Mega Man:</div>
-                                <div id="test-1" style="display:none"> Metal Man, Air Man, Bubble Man, Quick Man, Crash Man, Flash Man, Heat Man, and Wood Man; along with a new fortress and army of robotic henchmen. Mega Man is sent by his creator, Dr. Light, to defeat Dr. Wily and his Robot Masters. Mega Man crushes the eight new Robot Masters and then challenges Wily himself. During the final fight, Dr. Wily flees into the caves beneath his fortress and when Mega Man follows, attempts to trick Mega Man into thinking he is a space alien, but Mega Man defeats the alien revealing it to be a holographic projection device which malfunctions showing Dr. Wily at the controls. After the scientist begs for mercy, Mega Man spares Wily and returns home</div>
-                                 <button type="button" onclick="toggle_div(this,'test-1');" title="Afficher la suite">+</button>
-                                <div class="background-icon"><span class="icon-twitter"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-one-third">
-                    <div class="card large has-background-grey-lighter">
-                      <a href="../html/Jeu_Airnest.html">  <div class="card-image" >
-                            <figure class="image">
-                                <img src="https://imgc.allpostersimages.com/img/print/affiches/super-mario-bros-3-nes-cover_a-G-10636767-0.jpg"
-                                 style="width: 100%; height: 350px;" alt="Image">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-96x96">
-                                        <img src="https://res.cloudinary.com/teepublic/image/private/s--ZXqEzJub--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1464817760/production/designs/530516_1.jpg" alt="Image">
-                                    </figure>
-                                </div>
-                            </a>
-                                <div class="media-content">
-                                    <p class="title is-4 no-padding">Super Mario Bros 3</p>
-                                    <p><span class="title is-6"><a href="https://en.wikipedia.org/wiki/Platform_game">#platform</a></span></p>
-                                    <p class="subtitle is-6">Notation ici</p> 
-                                </div>
-                            </div>
-                            <div class="content">
-                                <div>Super Mario Bros. 3 is a two-dimensional, side-scrolling platform game in which the player controls either Mario or Luigi. The game shares similar gameplay mechanics</div>
-                                <div id="test-2" style="display:none"> with previous games in the series—Super Mario Bros., Super Mario Bros.: The Lost Levels, and Super Mario Bros. 2, while introducing several new elements. In addition to running and jumping found in past games, the player can slide down slopes, pick up and throw special blocks, and freely climb vines. Mario can also fly and float with power-ups. The game world consists of eight "kingdoms", each subdivided into multiple levels. The eight worlds feature distinct visual themes: for example, the second world, "Desert Land", contains sand-covered levels with pyramids, while the levels in the fourth world, "Giant Land", contain obstacles and enemies four times their normal size.</div>
-                                <button type="button" onclick="toggle_div(this,'test-2');" title="Afficher la suite">+</button>
-                                <div class="background-icon"><span class="icon-facebook"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-one-third">
-                    <div class="card large has-background-grey-lighter">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="http://www.lafilleengeek.fr/wp-content/uploads/2014/09/TLOZ.jpg" style="width: 100%; height: 350px;" alt="Image">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-96x96">
-                                        <img src="https://res.cloudinary.com/teepublic/image/private/s--ZXqEzJub--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1464817760/production/designs/530516_1.jpg" alt="Image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4 no-padding">The Legend Of Zelda</p>
-                                    <p><span class="title is-6"><a href="https://en.wikipedia.org/wiki/Action-adventure_game">#ActionAdventure</a></span></p>
-                                    <p class="subtitle is-6">Developer</p>
-                                </div>
-                            </div>
-                            <div class="content"> 
-                                <div>
-                                A small kingdom in the land of Hyrule is engulfed by chaos when an army led by Ganon, the Prince of Darkness, invaded and stole the Triforce of Power, one part of</div>
-                                <div id="test-3" style="display:none"> a magical artifact which alone bestows great strength. In an attempt to prevent him from acquiring the Triforce of Wisdom, another of the three pieces, Princess Zelda splits it into eight fragments and hides them in secret underground dungeons. Before eventually being kidnapped by Ganon, she commands her nursemaid Impa to find someone courageous enough to save the kingdom. While wandering the land, the old woman is surrounded by Ganon's henchmen, when a young boy named Link appears and rescues her. Upon hearing Impa's plea, he resolves to save Zelda and sets out to reassemble the scattered fragments of the Triforce of Wisdom, with which Ganon can then be defeated.
-
-                                During the course of the tale, Link locates and braves the eight underworld labyrinths, and beyond their defeated guardian monsters retrieves each fragment. With the completed Triforce of Wisdom, he is able to infiltrate Ganon's hideout in Death Mountain, confronting the pig-like lord and destroying him with the Silver Arrow. Obtaining the Triforce of Power from Ganon's ashes, Link returns it and the restored Triforce of Wisdom to the rescued Princess Zelda, and peace can return to Hyrule.</div>
-                                <button type="button" onclick="toggle_div(this,'test-3');" title="Afficher la suite">+</button>
-                                <div class="background-icon"><span class="icon-barcode"></span></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Developers -->
-
-            <!-- Staff -->
-            <div class="row columns is-multiline">
-                <div class="column is-one-third">
-                    <div class="card large round has-background-grey-lighter">
-                        <div class="card-image ">
-                            <figure class="image">
-                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/51/Castlevania_1_cover.png/220px-Castlevania_1_cover.png" style="width: 100%; height: 350px"  alt="Image">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="media">  
-                                <div class="media-left">
-                                    <figure class="image is-96x96">
-                                        <img src="data:image/png;base64,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" alt="Image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4 no-padding">Castlevania</p>
-                                    <p><span class="title is-6"><a href="https://en.wikipedia.org/wiki/Action_game">#Action   </a></span></p>
-                                    <p class="subtitle is-6">Moderator</p>
-                                </div>
-                            </div>
-                            <div class="content">
-                              <div> Players control Simon Belmont, who has entered Castlevania to defeat the vampire Count Dracula.
-                               Castlevania uses platform gameplay and is divided into six blocks of three stages each, for a total of 18 stages.</div>
-                                <div id="test-4" style="display:none">  Simon can move, jump, crouch, climb stairs,  and use a magic whip as his primary combat weapon. When the player presses the button to crack the whip, there is a short delay before Simon actually does so.[9] The player begins the game with four lives and five hearts, and must complete the current block of stages before a timer runs out. Simon has a health meter, which decreases whenever he is attacked by an enemy or projectile; if Simon's meter is fully depleted, he falls into a pit (even from an upper screen when there is ground on the previous screen that he walks up the stairs from), he gets hit by a moving spiked ceiling (which always instantly defeats him regardless of his health), or the timer reaches zero, the player loses one life. Hidden food items restore health, and bonus lives are earned at certain score thresholds. A boss character must be defeated at the end of each block in order to advance to the next one (and before advancing, an orb must be collected after defeating the boss); the ultimate goal is to defeat the Count at the end of Stage 18, triggering the collapse of his castle.
-
-                                Throughout the game, the player can find and use various backup weapons. However, only one such weapon can be carried at a time, and it is lost if the player loses a life. Backup weapons require hearts for their use, which can be found or taken from defeated enemies. Other hidden items include point bonuses, temporary invincibility, whip upgrades (3 levels total), instant destruction of all on-screen enemies, and double/triple use of the backup weapon.
-
-                                When all lives are lost, the player has the option to continue from the start of the block in which the game ended.
-                            </div>
-                             <button type="button" onclick="toggle_div(this,'test-4');" title="Afficher la suite">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-one-third">
-                    <div class="card large has-background-grey-lighter">
-                        <div class="card-image ">
-                            <figure class="image">
-                                <img src="http://nintendoforever.free.fr/Nes/_autres/Accueil/NesMini/SuperMarioBros1_02Titre.png" style="width: 100%; height: 350px"  alt="Image">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-96x96">
-                                        <img src='https://res.cloudinary.com/teepublic/image/private/s--ZXqEzJub--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1464817760/production/designs/530516_1.jpg' alt="Image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4 no-padding">Super Mario Bros.</p>
-                                    <p><span class="title is-6"><a href="https://en.wikipedia.org/wiki/Platform_game">#Plateform</a></span></p>
-                                    <p class="subtitle is-6">Moderator</p>
-                                </div>
-                            </div> BN  
-                            <div class="content">
-                                <div>
-                               In the fantasy setting of the Mushroom Kingdom, a tribe of turtle-like creatures known as the Koopa Troopas invade the kingdom and uses the magic of its king, </div>
-                                <div id="test-5" style="display:none">Bowser, to turn its inhabitants, known as the Mushroom People, into inanimate  objects such as bricks, stones and horsehair plants. Bowser and his army also kidnap Princess Toadstool, the princess of the Mushroom Kingdom and the only one with the ability to reverse Bowser's spell. After hearing the news, Mario sets out to save the princess and free the kingdom from Bowser. After traveling through various parts of the kingdom and fighting Bowser's forces along the way, Mario reaches Bowser's final stronghold, where he is able to defeat him by striking an axe on the bridge suspended over lava he is standing on, breaking the bridge, defeating Bowser, and allowing for the princess to be freed and saving the Mushroom Kingdom
-                               </div>
-                             <button type="button" onclick="toggle_div(this,'test-5');" title="Afficher la suite">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-one-third">
-                    <div class="card large has-background-grey-lighter">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="https://i.ytimg.com/vi/tKK7JiQ2qFU/hqdefault.jpg" style="width: 100%; height: 350px" alt="Image">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-96x96">
-                                        <img src='https://vignette.wikia.nocookie.net/logopedia/images/2/2f/Technos_japanlogo.png/revision/latest?cb=20180126000944' alt="Image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4 no-padding">Double Dragon II : The Revenge</p>
-                                    <p><span class="title is-6"><a href="https://en.wikipedia.org/wiki/Beat_%27em_up">#Beat'emUp</a></span></p>
-                                    <p class="subtitle is-6">Moderator</p>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <div>The arcade version of Double Dragon II: The Revenge begins with Marian, the damsel in distress from the original Double Dragon, being shot to death by the leader</div>
-                                <div id="test-6" style="display:none"> of the Black Warriors. Once again, the players assume the role of brothers Billy and Jimmy Lee, who are now tasked with the duty of avenging Marian's death. The arcade version of the game is essentially an improved version of the original title. The biggest change in the game's controls are in the replacement of the original's punch and kick buttons with two directional-based attack buttons (Left Attack and Right Attack) similar to Renegade. Pressing the attack button of the player's current direction will do a standard series of punches, while pressing the opposite attack button will perform a back kick. A few new moves are added as well, including a Hurricane Kick.
-
-                                 Almost all of the returning enemy characters from the first game were given makeovers and new moves which they can use against the player. The weapons that can be used by the player have also been redrawn and modified from the previous game. The steel bats and dynamite sticks for example, were replaced by shovels and grenades.
-
-                                Like in the original game, the arcade version of Double Dragon II is divided into four missions: a heliport, a lumber storehouse, a farm, and the new hideout of the boss. Each stage has its own boss character with his own theme. After defeating Willy (the final boss from the original game) in the fourth stage, the player will confront a double of their own character for the game's final battle. If two players reach the end together, then both will each have to face their own clone.
-                                </div>
-                             <button type="button" onclick="toggle_div(this,'test-6');" title="Afficher la suite">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-one-third">
-                    <div class="card large has-background-grey-lighter">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="https://i.ebayimg.com/00/z/ba4AAOxy63FS0mk9/$_35.JPG?set_id=89040003C1" style="width: 100%; height: 350px" alt="Image">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-96x96">
-                                        <img src="https://global-img.gamergen.com/capcom-logo-large_0190000000893704.jpg" alt="Image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4 no-padding">DuckTales</p>
-                                    <p><span class="title is-6"><a href="https://en.wikipedia.org/wiki/Platform_game">#Plateform</a></span></p>
-                                    <p class="subtitle is-6">Moderator</p>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <div>Players control Scrooge McDuck as he travels around the world and outer space in search of five treasures to further increase his fortune. Scrooge is able to attack enemies  and get around using </div>
-                                <div id="test-7" style="display:none">his cane. On the ground, Scrooge can swing his cane to attack enemies and to break open or throw certain objects. While jumping, Scrooge can bounce on his cane similarly to a pogo stick and attack enemies from above. This also allows him to reach higher areas as well as bounce across hazardous areas that would hurt him on foot. Along the way, Scrooge can find various diamonds, hidden inside treasure chests or appearing in certain areas, to increase his fortune and ice cream that can restore his health. Scrooge will also encounter various characters from the series who have a variety roles, such as providing hints, offering useful items, opening access to new areas, or attempting to stop Scrooge's progress.
-                                     </div>
-                             <button type="button" onclick="toggle_div(this,'test-7');" title="Afficher la suite">+</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-one-third">
-                    <div class="card large has-background-grey-lighter">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="https://webgames.host/uploads/2017/11/super-mario-bros-2.jpg" style="width: 100%; height: 350px" alt="Image">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-96x96">
-                                        <img src="https://res.cloudinary.com/teepublic/image/private/s--ZXqEzJub--/t_Preview/b_rgb:ffffff,c_limit,f_jpg,h_630,q_90,w_630/v1464817760/production/designs/530516_1.jpg" alt="Image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4 no-padding">Super Mario Bros. 2  </p>
-                                    <p><span class="title is-6"><a href="https://en.wikipedia.org/wiki/Platform_game">#Platform</a></span></p>
-                                    <p class="subtitle is-6">Moderator</p>
-                                </div>
-                            </div>
-                            <div class="content">
-                                <div>
-                                Mario has a dream of a staircase leading to a door to another world. A voice identifies the world as the dreamland of Subcon, and asks for Mario's help in defeating the</div>
-                                <div id="test-8" style="display:none"> villainous frog named Wart, a tyrant  who has cursed Subcon and its people. Mario suddenly awakes and decides to tell Luigi,   Toad and Princess Peach, who all report experiencing the same dream. The group decides to go on a picnic, but upon arriving, they discover a cave with a long staircase. Through a door at the top, the group are transported to Subcon, revealing their dreams to have been real. After defeating Wart, the people of Subcon are freed and the group celebrates, but Mario suddenly awakes in his bed, unsure if the events that took place were real or just a dream.</div>
-                             <button type="button" onclick="toggle_div(this,'test-8');" title="Afficher la suite">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-one-third">
-                    <div class="card large has-background-grey-lighter">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="https://m.media-amazon.com/images/M/MV5BMTkwNWY2YmEtZDBjOC00Y2U4LTkyODUtMmZhZGJkMWUxMDlhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg" style="width: 100%; height: 350px" alt="Image">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-96x96">
-                                        <img src="data:image/png;base64,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" alt="Image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                        <p class="title is-4 no-padding">Teenage Mutant Ninja Turtles</p>
-                                        <p><span class="title is-6"><a href="https://en.wikipedia.org/wiki/Platform_game">#Platform</a></span></p>
-                                        <p class="subtitle is-6">Moderator</p>
-                                    </div>
-                            </div>
-                            <div class="content">
-                                <div>
-                                The Ninja Turtles (Leonardo, Raphael, Michelangelo, and Donatello) are on a mission to retrieve the Life Transformer Gun from Shredder, a device that could </div>
-                                <div id="test-9" style="display:none"> restore their sensei Splinter backto his human form. The Turtles' first objective is to rescue their reporter friend April O'Neil, who is being held captive by Bebop and Rocksteady somewhere in the city. After rescuing April, the turtles must swim underwater to disarm a series of bombs set to destroy a dam, rescue Splinter from the Mecha Turtle, destroy a giant Mouser, find the Technodrome and eventually defeat Shredder.</div>
-                             <button type="button" onclick="toggle_div(this,'test-9');" title="Afficher la suite">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            <!-- End Staff -->
-        </div>
+      </div>
     </div>
+  </footer>
 
-    <footer class="footer has-background-grey-darker">
-            <div class="container">
-                <div class="content has-text-centered">
-                    <div class="soc">
-                        <a href="https://github.com/arveto"><i class="fa fa-github-alt fa-2x" aria-hidden="true"></i></a>
-                        <a href="https://twitter.com/ArvetoSoftwares?lang=fr"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
-                    </div>
-                    <p>
-                       
-                </div>
-            </div>
-        </footer>
 
-            <script src="../js/bulma.js"></script>
+  <script src="js/display.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/controller.js" type="text/javascript" charset="utf-8"></script>
 
+  <script type="text/javascript">
+    const host = '192.168.0.181' //host ip
+
+    let ws = new WebSocket('ws://' + window.location.host);
+
+    ws.onopen = function (e){
+      console.log("connected");
+
+      ws.send('{"event": "sql", "query": "requestGames"}');
+    };
+
+    initController();
+
+  </script>
 
 </body>
 
