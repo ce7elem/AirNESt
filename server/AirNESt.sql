@@ -21,7 +21,7 @@ ENGINE=INNODB;
 
 #Ajouter une colone a client (ca marche avec game aussi)
 ALTER TABLE Client
-ADD COLUMN nouvelle_colone;
+ADD COLUMN nouvelle_colone TYPES;
 
 #Inserer un nouveau utilisateur
 INSERT INTO Client
@@ -35,6 +35,7 @@ INSERT INTO Game
 SET name='AZE',
 editor='AZE',
 date_sortie='2010-07-21',
+category='shooter',
 comment='oh con les coms';
 
 #Afficher tous les jeux et les details triller par date de sortie
