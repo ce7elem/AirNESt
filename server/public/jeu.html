@@ -17,8 +17,8 @@
 
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.7.4/css/bulma.min.css" />
   <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
-
-
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="https://w.soundcloud.com/player/api.js"></script>
 </head>
 
 <body class="has-background-grey">
@@ -43,7 +43,7 @@
             <a class="navbar-item">Profile</a>
             <a class="Settings">
               <hr class="navbar-divider">
-                <div class="navbar-item">Logout</div>
+              <div class="navbar-item">Logout</div>
               </hr>
             </a>
           </div>
@@ -54,6 +54,34 @@
   </br>
   </br>
 
+
+  <!-- SOUNDCLOUD  -->
+  <div id="soundcloud_player">
+    <iframe src="https://w.soundcloud.com/player/?url=/eggscelent/sets/chiptune" width=100% height=100%></iframe>
+  </div>
+
+  <script type="text/javascript">
+    let widget = null;
+    let song_indexes = new Array();
+    let current_index = 0;
+
+    $(function() {
+      let iframe = document.querySelector('#soundcloud_player iframe');
+      widget = SC.Widget(iframe);
+    });
+  </script>
+
+  <style media="screen">
+    #soundcloud_player{
+      position: fixed;
+      width: 20vw;
+      /* height: 50vh; */
+      top: 20vh;
+      right: 3vw;
+    }
+  </style>
+
+  <!-- END SOUNDCLOUD  -->
 
   <div class="columns body-columns">
     <div class="column is-half is-offset-one-quarter">
@@ -82,9 +110,9 @@
         <script src="JSNES/source/ui.js" type="text/javascript" charset="utf-8"></script>
 
         <script type="text/javascript" charset="utf-8">
-          var nes;
+          let nes;
           $(function() {
-            window.romSelect = "roms/"+window.location.search.substr(1)+".nes";
+            window.romSelect = "roms/" + window.location.search.substr(1) + ".nes";
             nes = new JSNES({
               'ui': $('#emulator').JSNESUI({
                 "Homebrew": [
@@ -123,8 +151,8 @@
               </div>
             </div>
           </div>
-
         </div>
+
         <div class="card-footer">
           <div class="columns is-mobile">
             <div class="column is-11">
@@ -144,7 +172,7 @@
   </div>
 
   <script type="text/javascript">
-    var qrcode = new QRCode("qrcode", {
+    let qrcode = new QRCode("qrcode", {
       text: "oui",
       width: 100,
       height: 100,
@@ -160,8 +188,8 @@
     likes = nombre_like.innerHTML;
     likes = parseInt(likes);
 
-    var like_jeu = false;
-    var coeur_jeu = document.getElementById('coeur_jeu');
+    let like_jeu = false;
+    let coeur_jeu = document.getElementById('coeur_jeu');
 
     coeur_jeu.addEventListener('click', function() {
       if (like_jeu == false) {
@@ -177,8 +205,8 @@
       nombre_like.innerHTML = likes;
     });
 
-    var bulle = document.getElementById('bulle');
-    var nes_logo = document.getElementById('nes_logo');
+    let bulle = document.getElementById('bulle');
+    let nes_logo = document.getElementById('nes_logo');
 
     nes_logo.addEventListener('mouseover', function() {
       bulle.setAttribute('style', '  z-index: 8; background-color: white; color: black; visibility: visible; opacity : 0.8; ');
