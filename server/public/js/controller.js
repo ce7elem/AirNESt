@@ -9,27 +9,30 @@ let game = {
 }
 
 function initController(run) {
+  console.log("CONTROLLER INITIALISATION");
+
   ws.onmessage = function(event) {
     let data = JSON.parse(event.data);
-      switch (data.event) {
-        case 'sql':
-          display(data.result);
+    console.log(data);
+    switch (data.event) {
+      case 'sql':
+        display(data.result);
+        break;
+      case 'input':
+        if (data.roomId == game.roomId) {
+          handleInput(data);
           break;
-        case 'input':
-          if (data.roomId == game.roomId) {
-            handleInput(data);
-            break;
-          }
-        case 'error':
-          notif("Something went wrong...");
-          console.log(data.error);
-          break;
-        case 'connection':
-          notif("new connected");
-          break;
-        default:
-          console.log(data);
-      }
+        }
+      case 'error':
+        notif("Something went wrong...");
+        console.log(data.error);
+        break;
+      case 'connection':
+        notif("new connected");
+        break;
+      default:
+        console.log(data);
+    }
 
   };
 }

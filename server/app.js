@@ -42,7 +42,7 @@ const wss = new WebSocket.Server({ server });
 wss.broadcast = function broadcast(data) {
   wss.clients.forEach(function each(client) {
     if (client.readyState === WebSocket.OPEN) {
-      client.send(data);
+      client.send(JSON.stringify(data));
     }
   });
 };
@@ -59,12 +59,8 @@ wss.on('connection', function connection(ws) {
 
     switch (data.event) {
       case 'input':
-          // Broadcast to everyone else.
-          wss.clients.forEach(function each(client) {
-            if (client !== ws && client.readyState === WebSocket.OPEN) {
-              client.send(data);
-            }
-          });
+          // Broadcast to everyone.
+          wss.broadcast(data);
         break;
       case 'sql':
       console.log("[SQL] new request");

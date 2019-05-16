@@ -68,7 +68,7 @@ CREATE TABLE `Game` (
 
 LOCK TABLES `Game` WRITE;
 /*!40000 ALTER TABLE `Game` DISABLE KEYS */;
-INSERT INTO `Game` VALUES (1,'Contra','Konami','1987-01-01','Shooter','starf c est long','contra',0),(2,'Super Mario Bros','Nintendo','1988-10-28','Plateformer','Progression horizontal','super_mario_bros',0),(3,'Bubble Bobble','Taito','1986-01-01','Puzzle','pas fifou','bubble_bobble',0),(4,'Donkey Kong','Nintendo','1981-01-01','Platformer','sah quel plaisir c est comme dans mon enfance','donkey_kong',0),(5,'The Legend of Zelda','Nintendo','1986-02-21','Adventure','ZELDA EST UNE FEMME ????!!!!!','the_legend_of_zelda',0),(6,'Mega Man','Capcon','1987-01-01','Shooter','MEGA FORCE','mega_man',0),(7,'Tetris','Aleksei','1984-06-06','Puzzle','le training etait cool pour le demenagement','tetris',0),(8,'Life Force','Konami','1986-07-04','Arcade','connais po','life_force',0),(9,'Final Fantasy','Square Enix','1988-01-01','Adventure','frappe de jeu','final_fantasy',NULL);
+INSERT INTO `Game` VALUES (1,'Contra','Konami','1987-01-01','Shooter','starf c est long','contra',0),(2,'Super Mario Bros','Nintendo','1988-10-28','Plateformer','Progression horizontal','super_mario_bros',0),(3,'Bubble Bobble','Taito','1986-01-01','Puzzle','pas fifou','bubble_bobble',0),(4,'Donkey Kong','Nintendo','1981-01-01','Platformer','sah quel plaisir c est comme dans mon enfance','donkey_kong',0),(5,'The Legend of Zelda','Nintendo','1986-02-21','Adventure','ZELDA EST UNE FEMME ????!!!!!','the_legend_of_zelda',0),(6,'Mega Man','Capcon','1987-01-01','Shooter','MEGA FORCE','mega_man',0),(7,'lj65','Aleksei','1984-06-06','Puzzle','le training etait cool pour le demenagement','lj65',0),(8,'Life Force','Konami','1986-07-04','Arcade','connais po','life_force',0),(9,'Final Fantasy','Square Enix','1988-01-01','Adventure','frappe de jeu','final_fantasy',0);
 /*!40000 ALTER TABLE `Game` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -81,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-14 23:12:37
+-- Dump completed on 2019-05-16 21:11:11
