@@ -20,7 +20,7 @@ function display (data){
                                   <div class="media">
                                     <div class="media-left">
                                       <figure class="image is-96x96">
-                                        <img style="max-height:100%;" src="images/games/`+data[i].editor+`">
+                                        <img style="max-height:100%;" src="images/editor/`+data[i].editor_file+`.png">
                                       </figure>
                                     </div>
                                     <div class="media-content">
