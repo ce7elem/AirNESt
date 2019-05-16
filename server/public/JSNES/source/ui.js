@@ -172,6 +172,7 @@ if (typeof jQuery !== 'undefined') {
                      });
                  */
                  window.endpoint = self;
+                 console.log(this);
                  initController(self)
 
                 /*

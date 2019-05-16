@@ -13,7 +13,6 @@ function initController(run) {
 
   ws.onmessage = function(event) {
     let data = JSON.parse(event.data);
-    console.log(data);
     switch (data.event) {
       case 'sql':
         display(data.result);

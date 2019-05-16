@@ -4,7 +4,7 @@
 <head>
   <meta charset='utf-8'>
   <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
-  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="telephone">
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
@@ -17,6 +17,15 @@
 </head>
 
 <body>
+
+  <style media="screen">
+  * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  </style>
 
   <div id="header">
     <div id="hleft">
@@ -42,7 +51,6 @@
   <button id="B">B</button>
   <button id="up">⬆</button>
   <button id="down">⬇</button>
-  <button id="down2">⬇</button>
   <button id="left">⬅</button>
   <button id="right">➡</button>
   <button id="start">start</button>
