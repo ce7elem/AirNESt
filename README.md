@@ -1,7 +1,6 @@
 # AirNESt
 Play the iconic NES console in your browser with an application that imitates the classic controller!
 
-[WORK IN PROGRESS]
 
 Building AirNESt
 ================
@@ -10,15 +9,11 @@ Building AirNESt
 ```
   $ # clone project and get dependencies
   $ git clone https://github.com/TERRUSS/AirNESt
-  $ go get github.com/gorilla/websocket
-  $ go get github.com/fatih/color
 
   $ # start the server
-  $ cd server/
-  $ go run main.go
+  $ cd AirNESt/server/
+  $ npm i && node app.js
   $ # or compile it & return
-  $ go build main.go
-  $ ./main
 ```
 
 - Build the mobile app :
@@ -32,6 +27,10 @@ You will need [cordova](https://cordova.apache.org).
 
 Dependencies
 ------------
-* [github.com/gorilla/websocket](https://github.com/gorilla/websocket)
-* [github.com/fatih/color](https://github.com/fatih/color)
 * [Cordova](https://cordova.apache.org)
+* [node.js](https://nodejs.org/en)
+* [mariadb](https://mariadb.org)
+* [JSNES](https://github.com/bfirsh/jsnes)
+* [ws: a Node.js WebSocket library](https://github.com/websockets/ws)
+* [bulma](https://bulma.io)
+* [NES.css](https://nostalgic-css.github.io/NES.css)
