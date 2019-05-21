@@ -5,32 +5,29 @@ Play the iconic NES console in your browser with an application that imitates th
 Building AirNESt
 ================
 
-- Build and run the web server :
+- Clone and build the project :
 ```
   $ # clone project and get dependencies
   $ git clone https://github.com/TERRUSS/AirNESt
 
-  $ # start the server
+  $ # build the database
   $ cd AirNESt/server/
-  $ npm i && node app.js
-  $ # or compile it & return
+  $ mysql -u root -p AirNESt < AirNESt_DB.sql
+
+  $ #start the server
+  $ npm i && npm run serve
 ```
 
-- Build the mobile app :
-You will need [cordova](https://cordova.apache.org).
-```
-  $ cordova create airnest_gamepad
-  $ # copy the git's /gamepad/* in the folder
-  $ cordova platform add android
-  $ cordova build android
-```
+- Play ! :
+Go to http://localhost:8080 on your browser to select the game,
+On your phone go to "http://[YOUR IP]:8000" to get a controller !
 
 Dependencies
 ------------
-* [Cordova](https://cordova.apache.org)
-* [node.js](https://nodejs.org/en)
-* [mariadb](https://mariadb.org)
-* [JSNES](https://github.com/bfirsh/jsnes)
-* [ws: a Node.js WebSocket library](https://github.com/websockets/ws)
-* [bulma](https://bulma.io)
+* [Node.JS](https://nodejs.org/en)
+* [Python3](https://www.python.org/)
+* [MariaDB](https://mariadb.org)
+* [JSNES : a JS emulator for the NES console](https://github.com/bfirsh/jsnes)
+* [ws : a Node.js WebSocket library](https://github.com/websockets/ws)
+* [Bulma](https://bulma.io)
 * [NES.css](https://nostalgic-css.github.io/NES.css)
