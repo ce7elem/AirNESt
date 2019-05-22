@@ -1,0 +1,35 @@
+#navbarre{
+
+	padding: 0 100px 0 100px;
+}
+
+#carte{
+	border-style: outset; border-width: 3px;
+
+	}
+
+	#carte2{
+
+		padding-top: 0;
+	}
+
+
+
+	  #bulle {
+
+      z-index: 8;
+      background-color: white;
+      visibility: hidden;
+      position: relative;
+      top: -2em;
+      left: 19em;
+    }
+
+    #titre {
+      color: #E32C06;
+    }
+
+    #nes_logo {
+      position: relative;
+      left: 20em;
+      top: 0em;
